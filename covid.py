@@ -113,11 +113,15 @@ plot_over_time(df=states, geo="state", stat="cases", geo_to_rm=states_to_rm)
 plot_over_time(df=states, geo="state", stat="deaths", geo_to_rm=states_to_rm)
 
 # %% County Plots
-counties_to_rm = ["New York - New York City", "Washington - King"]
+counties_to_rm = ["New York - New York City"]
 plot_over_time(
-    df=counties, geo="county", stat="cases", n_geo=12, geo_to_rm=counties_to_rm
+    df=counties, geo="county", stat="cases", n_geo=11, geo_to_rm=counties_to_rm
 )
 
+counties_to_rm = ["New York - New York City", "Washington - King"]
 plot_over_time(
     df=counties, geo="county", stat="deaths", n_geo=12, geo_to_rm=counties_to_rm
 )
+
+
+# %%
