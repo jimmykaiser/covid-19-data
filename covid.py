@@ -19,12 +19,16 @@ states[states.date == latest_date].sort_values("deaths", ascending=False).head(1
 counties[counties.date == latest_date].sort_values("deaths", ascending=False).head(10)
 
 # %% Unknown counties are people whose residence isn't known yet
-counties[(counties.state == "Georgia") & (counties.date == latest_date)].sort_values(
+counties[(counties.county == "Unknown") & (counties.date == latest_date)].sort_values(
     "deaths", ascending=False
 ).head(10)
 
+# %% Remove unknown counties
+counties = counties[counties.county != "Unknown"]
+
 # %% Add state to county
 counties["county"] = counties.apply(lambda x: f"{x['state']} - {x['county']}", axis=1)
+
 
 # %% Plot over time
 
@@ -93,7 +97,7 @@ def plot_over_time(
     patches, labels = ax.get_legend_handles_labels()
     patches_dict = dict(zip(labels, patches))
     new_patches = []
-    for _, g in enumerate(geo_list):
+    for g in geo_list:
         new_patches.append(patches_dict[g])
     ax.legend(new_patches, geo_list, loc="best")
     ax.set_xlabel("Date")
