@@ -1,28 +1,28 @@
 # Coronavirus in the U.S.
 
-Updated with 4/3 data
+Updated with 5/3 data
 
 ## Counties with the most deaths
 
-This plot shows the number of reported Covid-19 deaths for the ten counties with the highest counts, excluding New York City and King County, WA. NYC has 2,700+ deaths, while King County has 220+. 
+This plot shows the weekly number of reported Covid-19 deaths for the ten counties with the highest counts, excluding New York City. 
 
 ![county_deaths](plots/county_deaths.png)
 
 ## States with the most deaths
 
-This plot shows the number of reported Covid-19 deaths for the ten states with the highest counts, excluding New York, which has 4,700+ deaths. 
+This plot shows the weekly number of reported Covid-19 deaths for the ten states with the highest counts. 
 
 ![state_deaths](plots/state_deaths.png)
 
-## Counties with the most cases
+## Reported cases by county
 
-This plot shows the number of reported Covid-19 cases for the ten counties with the highest counts, excluding New York City, which has 68,000+ cases. 
+This plot shows the number of reported Covid-19 cases for the ten counties with the most deaths, excluding New York City. 
 
 ![county_cases](plots/county_cases.png)
 
-## States with the most cases
+## Reported cases by state
 
-This plot shows the number of reported Covid-19 cases for the ten states with the highest counts, excluding New York, which has 130,000+ cases. 
+This plot shows the number of reported Covid-19 cases for the ten states with the most deaths. 
 
 ![state_cases](plots/state_cases.png)
 
