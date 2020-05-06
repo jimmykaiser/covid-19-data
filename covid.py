@@ -100,8 +100,6 @@ def plot_over_time(
         ms=10,
     )
 
-    # plt.xticks(ticks=np.arange(n_date), labels=reversed(date_list))
-
     # Make legend
     patches, labels = ax.get_legend_handles_labels()
     patches_dict = dict(zip(labels, patches))
