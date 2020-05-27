@@ -47,7 +47,7 @@ def plot_over_time(
     # Get top states or counties on latest date
     geo_list = list(
         df[df.date == latest_date]
-        .sort_values("deaths", ascending=False)
+        .sort_values("new_deaths", ascending=False)
         .head(n_geo)[geo]
     )
     if geo_to_rm:

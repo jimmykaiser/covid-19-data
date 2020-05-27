@@ -1,6 +1,6 @@
 # Coronavirus in the U.S.
 
-Updated with 5/18 data
+Updated with 5/25 data
 
 ## Counties with the most deaths
 
