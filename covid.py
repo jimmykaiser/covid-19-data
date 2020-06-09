@@ -47,7 +47,7 @@ def plot_over_time(
     # Get top states or counties on latest date
     geo_list = list(
         df[df.date == latest_date]
-        .sort_values("new_deaths", ascending=False)
+        .sort_values("deaths", ascending=False)
         .head(n_geo)[geo]
     )
     if geo_to_rm:
@@ -136,13 +136,13 @@ plot_over_time(
 )
 
 # %% County Plots
-counties_to_rm = ["New York - New York City"]
+counties_to_rm = []
 plot_over_time(
     df=counties,
     geo="county",
     stat="cases",
     n_geo=10 + len(counties_to_rm),
-    geo_to_rm=counties_to_rm,
+    # geo_to_rm=counties_to_rm,
 )
 
 plot_over_time(
@@ -150,7 +150,7 @@ plot_over_time(
     geo="county",
     stat="deaths",
     n_geo=10 + len(counties_to_rm),
-    geo_to_rm=counties_to_rm,
+    # geo_to_rm=counties_to_rm,
 )
 
 

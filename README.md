@@ -1,10 +1,10 @@
 # Coronavirus in the U.S.
 
-Updated with 5/25 data
+Updated with 6/7 data
 
 ## Counties with the most deaths
 
-This plot shows the weekly number of reported Covid-19 deaths for the ten counties with the highest counts, excluding New York City. 
+This plot shows the weekly number of reported Covid-19 deaths for the ten counties with the highest counts. 
 
 ![county_deaths](plots/county_deaths.png)
 
@@ -16,7 +16,7 @@ This plot shows the weekly number of reported Covid-19 deaths for the ten states
 
 ## Reported cases by county
 
-This plot shows the number of reported Covid-19 cases for the ten counties with the most deaths, excluding New York City. 
+This plot shows the number of reported Covid-19 cases for the ten counties with the most deaths. 
 
 ![county_cases](plots/county_cases.png)
 
