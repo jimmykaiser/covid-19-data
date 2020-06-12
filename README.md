@@ -1,30 +1,22 @@
 # Coronavirus in the U.S.
 
-Updated with 6/7 data
-
-## Counties with the most deaths
-
-This plot shows the weekly number of reported Covid-19 deaths for the ten counties with the highest counts. 
-
-![county_deaths](plots/county_deaths.png)
-
-## States with the most deaths
-
-This plot shows the weekly number of reported Covid-19 deaths for the ten states with the highest counts. 
-
-![state_deaths](plots/state_deaths.png)
-
-## Reported cases by county
-
-This plot shows the number of reported Covid-19 cases for the ten counties with the most deaths. 
-
-![county_cases](plots/county_cases.png)
+The plots below show the ten states and ten counties with the most reported cases of Covid-19 in the last seven days, as of June 10, 2020. 
 
 ## Reported cases by state
 
-This plot shows the number of reported Covid-19 cases for the ten states with the most deaths. 
-
 ![state_cases](plots/state_cases.png)
+
+## Reported cases by county
+
+![county_cases](plots/county_cases.png)
+
+## Reported deaths by state
+
+![state_deaths](plots/state_deaths.png)
+
+## Reported deaths by county
+
+![county_deaths](plots/county_deaths.png)
 
 ## Source
 

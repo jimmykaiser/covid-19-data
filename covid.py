@@ -30,12 +30,11 @@ counties = counties[counties.county != "Unknown"]
 # %% Add state to county
 counties["county"] = counties.apply(lambda x: f"{x['state']} - {x['county']}", axis=1)
 
-
 # %% Plot over time
 
 
 def plot_over_time(
-    df, geo, stat, n_geo=11, n_date=8, latest_date=latest_date, geo_to_rm=None
+    df, geo, stat, n_geo=11, n_date=6, latest_date=latest_date, geo_to_rm=None
 ):
 
     """ 
@@ -44,25 +43,26 @@ def plot_over_time(
 
     plt.style.use("seaborn-whitegrid")
 
-    # Get top states or counties on latest date
+    # Get most recent dates
+    date_list = df.date.sort_values(ascending=False).unique()[0 : (n_date * 7)]
+
+    # New cases / deaths
+    df[f"new_cases"] = df.groupby([geo])["cases"].diff(periods=7)
+    df[f"new_deaths"] = df.groupby([geo])["deaths"].diff(periods=7)
+    today_weekday = datetime.strptime(latest_date, "%Y-%m-%d").strftime("%A")
+    df["day_of_week"] = pd.to_datetime(df["date"]).dt.day_name()
+    df = df[df.day_of_week == today_weekday]
+
+    # Get top states or counties by new cases in last week
     geo_list = list(
         df[df.date == latest_date]
-        .sort_values("deaths", ascending=False)
+        .sort_values("new_cases", ascending=False)
         .head(n_geo)[geo]
     )
     if geo_to_rm:
         for g in geo_to_rm:
             geo_list.remove(g)
         n_geo = n_geo - len(geo_to_rm)
-
-    # Get most recent dates
-    date_list = df.date.sort_values(ascending=False).unique()[0 : (n_date * 7)]
-
-    # New cases / deaths
-    df[f"new_{stat}"] = df.groupby([geo])[stat].diff(periods=7)
-    today_weekday = datetime.strptime(latest_date, "%Y-%m-%d").strftime("%A")
-    df["day_of_week"] = pd.to_datetime(df["date"]).dt.day_name()
-    df = df[df.day_of_week == today_weekday]
 
     # Make wide table
     df_wide = (
@@ -107,10 +107,15 @@ def plot_over_time(
     for g in geo_list:
         new_patches.append(patches_dict[g])
     ax.legend(new_patches, geo_list, loc="upper right")
+    ax.set_ylim(ymin=0)
     ax.set_xlabel("Date")
     ax.set_ylabel(f"Reported {stat.title()} in the Last Seven Days")
 
-    plt.text(4, 0, "Source: NYT https://github.com/nytimes/covid-19-data")
+    plt.text(
+        2.8,
+        ax.get_ylim()[1] * -0.07,
+        "Source: NYT https://github.com/nytimes/covid-19-data",
+    )
 
     plt.savefig(f"plots/{geo}_{stat}.png", bbox_inches="tight")
 
