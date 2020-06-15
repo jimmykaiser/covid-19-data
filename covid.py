@@ -119,7 +119,8 @@ def plot_over_time(
 
     plt.savefig(f"plots/{geo}_{stat}.png", bbox_inches="tight")
 
-    return plt.show()
+    # return plt.show()
+    return
 
 
 # %% State Plots
