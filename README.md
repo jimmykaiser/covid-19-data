@@ -1,6 +1,6 @@
 # Coronavirus in the U.S.
 
-The plots below show the ten states and ten counties with the most reported cases of Covid-19 in the last seven days, as of June 17, 2020. 
+The plots below show the ten states and ten counties with the most reported cases of Covid-19 in the last seven days, as of June 19, 2020. 
 
 ## Reported cases by state
 
