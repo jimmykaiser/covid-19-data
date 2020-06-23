@@ -106,7 +106,7 @@ def plot_over_time(
     new_patches = []
     for g in geo_list:
         new_patches.append(patches_dict[g])
-    ax.legend(new_patches, geo_list, loc="upper right")
+    ax.legend(new_patches, geo_list, loc="upper left")
     ax.set_ylim(ymin=0)
     ax.set_xlabel("Date")
     ax.set_ylabel(f"Reported {stat.title()} in the Last Seven Days")
